@@ -152,4 +152,8 @@ for s in SERVICES:
 write("404.html", head("העמוד לא נמצא | " + NAME, "העמוד לא נמצא", "/404", '<meta name="robots" content="noindex">') + header() + '<main id="main" class="wrap page"><h1>העמוד לא נמצא</h1><p class="lead">חזרו לעמוד הבית ובחרו שירות.</p><a class="btn" href="/">לעמוד הבית</a></main>' + footer() + "</body></html>")
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{DOMAIN}{u or '/'}</loc></url>" for u in urls) + "</urlset>")
 write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
+write(
+    "google225e77db2b1a5cda.html",
+    "google-site-verification: google225e77db2b1a5cda.html\n"
+)
 print("built", len(urls), "pages ->", OUT)
