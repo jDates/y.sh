@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        DOMAIN: ${DOMAIN:-https://example.co.il}
+        GA4_ID: ${GA4_ID:-}
+        GTM_ID: ${GTM_ID:-}
+        GSC_VERIFY: ${GSC_VERIFY:-}
+    container_name: ys-pitaron
+    restart: unless-stopped
+    ports:
+      - "8080:80"   # ב-Nginx Proxy Manager: Forward Host=ys-pitaron, Port=80
