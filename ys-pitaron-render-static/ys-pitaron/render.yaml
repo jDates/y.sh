@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: ys-pitaron-site
-    runtime: static
-    buildCommand: python src/build.py dist
-    staticPublishPath: ./dist
