@@ -36,7 +36,7 @@ const wi=document.getElementById("wi");document.getElementById("ws").onclick=sen
 /* שחזור שיחה בין עמודים / התחלה חדשה */
 if(H.some(e=>e.k==="o")){for(const e of H){if(e.k==="b")mkBot(e.t,e.tm);else if(e.k==="m")mkMe(e.t,e.tm);else if(e.k==="o")mkOpts(1);else if(e.k==="a")mkActs(e.h)}scroll()}
 else{H=[];try{sessionStorage.removeItem(KEY)}catch(_){}
- run(async()=>{await sleep(700);await bot("שלום, ברוכים הבאים לי.ש פתרון!");await bot("נשמח לתת לכם שירות בתחומי התקשורת, מתח נמוך, בית חכם, אינטרנט, מחשבים, WiFi, התקנות ועוד.");await bot("מה בדיוק מעניין אותך?");opts()})}
+ run(async()=>{await sleep(700);await bot("שלום, ברוכים הבאים לי.ש פתרון!");await bot("שמי יוסף חיים 😊");await bot("אשמח לתת לך שירות בתחומי התקשורת, מתח נמוך, בית חכם, אינטרנט, מחשבים, WiFi, התקנות ועוד.");await bot("מה בדיוק מעניין אותך?");opts()})}
 })();
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest(".yt");if(!b)return;
  const f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+b.dataset.id+"?autoplay=1&rel=0&playsinline=1";f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;f.title=b.getAttribute("aria-label");f.style.cssText="width:100%;height:100%;border:0";
