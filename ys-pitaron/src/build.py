@@ -73,7 +73,7 @@ CHAT = [
  ("tool","התקנות ופתרונות נוספים","התקנות תקשורת ותשתיות ופתרונות טכנולוגיים נוספים.","communication","התקנות ופתרונות נוספים"),
  ("chat","אני רוצה לדבר עם נציג","","","שיחה עם נציג"),
 ]
-FAQ = [("באילו אזורים אתם פועלים?","אזורי השירות יעודכנו כאן. כתבו לנו בוואטסאפ ונאשר אם אנחנו מגיעים אליכם."),("איך מקבלים הצעת מחיר?","שולחים הודעה בוואטסאפ או מתקשרים, מתארים מה צריך, ונחזור עם הצעה או תיאום ביקור."),("האם אפשר לשלב כמה שירותים יחד?","כן. מצלמות, WiFi, אינטרקום ובית חכם מתחברים לתשתית אחת, וכך חוסכים עבודה כפולה.")]
+FAQ = [("באילו אזורים אתם פועלים?","אנחנו עובדים בפריסה ארצית. כתבו לנו בוואטסאפ לתיאום מתי מגיעים אליכם."),("איך מקבלים הצעת מחיר?","שולחים הודעה בוואטסאפ או מתקשרים, מתארים מה צריך, ונחזור עם הצעה או תיאום ביקור."),("האם אפשר לשלב כמה שירותים יחד?","כן. מצלמות, WiFi, אינטרקום ובית חכם מתחברים לתשתית אחת, וכך חוסכים עבודה כפולה.")]
 LOCAL = {"@type":"LocalBusiness","@id":DOMAIN+"/#business","name":NAME,"telephone":TEL,"url":DOMAIN+"/","slogan":TAG,"areaServed":"IL"}  # הוסיפו address/openingHours כשיהיו פרטים אמיתיים
 
 def wa(t): return WA + "?text=" + __import__("urllib.parse").parse.quote(t)
@@ -93,7 +93,7 @@ def header():
     return f'<a class="skip" href="#main">דלגו לתוכן</a><header class="top"><a class="logo" href="/"><b>י.ש</b> פתרון</a><nav aria-label="ראשי">{nav}<a href="/#contact">צור קשר</a></nav><a class="btn sm" href="tel:{TEL}">{PHONE}</a></header>'
 def footer():
     ls = "".join(f'<a href="/{s["slug"]}">{s["name"]}</a>' for s in SERVICES)
-    return f'<footer><div class="wrap fgrid"><div><b>{NAME}</b><p>{TAG}.</p><a href="tel:{TEL}">{PHONE}</a></div><nav aria-label="שירותים">{ls}</nav></div><p class="copy">© {NAME}. כל הזכויות שמורות.</p></footer><a class="fwa" href="{wa("שלום, הגעתי דרך האתר של י.ש פתרון ואשמח לפרטים.")}" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">{ic("wa")}</a>'
+    return f'<footer><div class="wrap fgrid"><div><b>{NAME}</b><p>{TAG}.</p><a href="tel:{TEL}">{PHONE}</a></div><nav aria-label="שירותים">{ls}</nav></div><p class="copy">© {NAME}. כל הזכויות שמורות ל Claude & ChatGPT.</p></footer><a class="fwa" href="{wa("שלום, הגעתי דרך האתר של י.ש פתרון ואשמח לפרטים.")}" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ">{ic("wa")}</a>'
 def write(p, s):
     f = os.path.join(OUT, p); os.makedirs(os.path.dirname(f), exist_ok=True); open(f, "w", encoding="utf-8").write(s)
 def li(a): return "".join(f"<li>{E(x)}</li>" for x in a)
